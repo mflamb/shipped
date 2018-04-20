@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_20_211106) do
+
+ActiveRecord::Schema.define(version: 2018_04_20_203542) do
+
+  create_table "boats", force: :cascade do |t|
+    t.string "name"
+    t.integer "capacity"
+    t.string "location"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.index ["user_id"], name: "index_boats_on_user_id"
+  end
 
   create_table "jobs", force: :cascade do |t|
     t.string "name"
@@ -19,10 +34,10 @@ ActiveRecord::Schema.define(version: 2018_04_20_211106) do
     t.string "origin"
     t.string "destination"
     t.integer "containers"
-    t.integer "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["users_id"], name: "index_jobs_on_users_id"
+
   end
 
   create_table "users", force: :cascade do |t|

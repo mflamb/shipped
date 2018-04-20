@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'job/index'
-  get 'home/index'
+
   devise_for :users
 
 
