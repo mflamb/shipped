@@ -10,20 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_20_211106) do
-
-  create_table "jobs", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.decimal "price"
-    t.string "origin"
-    t.string "destination"
-    t.integer "containers"
-    t.integer "users_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_jobs_on_users_id"
-  end
+ActiveRecord::Schema.define(version: 2018_04_19_144215) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
