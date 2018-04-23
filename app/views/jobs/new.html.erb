@@ -1,37 +1,13 @@
-<h1>Jobs#New</h1>
-<p>Find me in app/views/job/new.html.erb</p>
 
-<%= form_for @job do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+<h1>Create a New Job</h1>
 
-  <div>
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
-
-  <div>
-    <%= f.label :origin %>
-    <%= f.text_field :origin %>
-  </div>
-
-  <div>
-    <%= f.label :destination %>
-    <%= f.text_field :destination %>
-  </div>
-  <div>
-    <%= f.label :containers %>
-    <%= f.text_field :containers %>
-  </div>
-
-  <div>
-    <%= f.submit %>
-  </div>
-  <% end %>
+<%= simple_form_for(@job) do |f| %>
+<%= f.input :name %>
+<%= f.input :price %>
+<%= f.input :description %>
+<%= f.input :containers %>
+<%= f.input :origin, collection: Job::FROM %>
+<%= f.input :destination, collection: Job::TO %>
+<%= f.input :avatar, as: :file %>
+<%= f.submit %>
+<% end %>
