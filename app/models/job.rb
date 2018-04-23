@@ -7,8 +7,8 @@ class Job < ApplicationRecord
   validates :description, presence: true, length: { minimum: 50}
   validates :containers, numericality: { greater_than_or_equal_to: 1,  only_integer: true }
 
-  FROM= ["Long Beach", "Los Angeles",  "New York",  "New Jersey",  "Houston", "Oakland", "Tacoma", "Philadelphia", "Detroit", "Puerto Rico‎", "Hawaii"] 
-  TO= ["Long Beach", "Los Angeles", "New York", "New Jersey", "Houston", "Oakland", "Tacoma", "Philadelphia", "Detroit", "Puerto Rico‎", "Hawaii" ]
+  FROM= [ "Long Beach", "Los Angeles", "New York", "New Jersey", "Houston", "Oakland", "Tacoma", "Philadelphia", "Detroit", "Puerto Rico‎", "Hawaii" ]
+  TO= [ "Long Beach", "Los Angeles", "New York", "New Jersey", "Houston", "Oakland", "Tacoma", "Philadelphia", "Detroit", "Puerto Rico‎", "Hawaii" ]
 end
 
 

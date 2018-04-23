@@ -1,4 +1,13 @@
 <h1>Job#index</h1>
 <p>Find me in app/views/job/index.html.erb</p>
 
-
+<% @jobs.reverse.each do |job| %>
+    <h3> <%= job.id %>. <%= job.name %> <%= link_to 'Delete', job, :method => :delete, data: {confirm: "This is your last chance to change your mind!"} %> </h3>
+    <div>
+    <p> <b>Description: </b><%= job.description %> </p>
+    <p> <b>Price: </b>$<%= job.price %> </p>
+    <p> <b>Origin: </b><%= job.origin %> </p>
+    <p> <b>Destination: </b><%= job.destination %> </p>
+    <p> <b>Containers Needed: </b><%= job.containers %> </p>
+    </div>
+<% end %>

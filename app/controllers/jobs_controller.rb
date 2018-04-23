@@ -8,11 +8,25 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
-    @job.save
+
+    if @job.save
+      redirect_to jobs_path
+    else 
+      puts @job.errors.full_messages
+      redirect_to "new"
+    end
+
   end
 
-  def show
+  def update
   end
+
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to jobs_path
+   end
+
 
   private
 
