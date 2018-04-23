@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_04_23_154502) do
+=======
+ActiveRecord::Schema.define(version: 2018_04_23_154516) do
+>>>>>>> renamed a table, added navbar with some style
 
   create_table "boats", force: :cascade do |t|
     t.string "name"
