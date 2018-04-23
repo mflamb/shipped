@@ -1,11 +1,16 @@
 class BoatsController < ApplicationController
   def index
+    @boats = Boat.all
   end
 
   def new
+    @boat = Boat.create
   end
 
   def create
+    @boat = Boat.new(boat_params)
+    get_boat_user_id
+    @boat.save
   end
 
   def show
@@ -14,7 +19,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :capacity, :location, :avatar)
+    params.require(:boat).permit(:name, :capacity, :location, :user_id, :avatar)
   end
 
 end
