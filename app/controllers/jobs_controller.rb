@@ -1,20 +1,19 @@
 class JobsController < ApplicationController
   def index
+    @jobs = Job.all
   end
 
   def new
-    @job = Job.new
+    @job = Job.create
   end
 
-  def create
+  def create 
     @job = Job.new(job_params)
+    # do I need to grab the boat_id too?
     @job.save
-  end
+  end 
 
-  def show
-  end
-
-  private
+  private 
 
   def job_params
     params.require(:job).permit(:name, :description, :price, :origin, :destination, :containers)
