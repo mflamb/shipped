@@ -1,0 +1,12 @@
+<h1>Create a New Job</h1>
+
+<%= simple_form_for(@job) do |f| %>
+<%= f.input :name %>
+<%= f.input :price %>
+<%= f.input :description %>
+<%= f.input :containers %>
+<%= f.input :origin, collection: Job::FROM %>
+<%= f.input :destination, collection: Job::TO %>
+<%= f.input :avatar, as: :file %>
+<%= f.submit %>
+<% end %>

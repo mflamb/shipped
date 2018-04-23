@@ -1,2 +1,12 @@
 <h1>Boats#create</h1>
 <p>Find me in app/views/boats/create.html.erb</p>
+
+<h1>Create a New Boat</h1>
+
+<%= simple_form_for(@boat) do |f| %>
+<%= f.input :name %>
+<%= f.input :capacity %>
+<%= f.input :location, collection: Boat::PORTS %>
+<%= f.input :avatar, as: :file %>
+<%= f.submit %>
+<% end %>

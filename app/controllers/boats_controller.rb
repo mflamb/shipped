@@ -3,9 +3,12 @@ class BoatsController < ApplicationController
   end
 
   def new
+    @boat = Boat.new
   end
 
   def create
+    @boat = Boat.new(boat_params)
+    @boat.save
   end
 
   def show
