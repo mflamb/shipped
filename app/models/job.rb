@@ -3,12 +3,12 @@ class Job < ApplicationRecord
   has_many :boats, through: :schedules
 
   validates :name, length: {minimum: 4}, uniqueness: true
-  validates :price, numericality: { less_than_or_equal_to: 1000,  only_integer: true }
+  validates :price, numericality: { greater_than_or_equal_to: 1000,  only_integer: true }
   validates :description, presence: true, length: { minimum: 50}
-  validates :containers, numericality: { less_than_or_equal_to: 1,  only_integer: true }
+  validates :containers, numericality: { greater_than_or_equal_to: 1,  only_integer: true }
 
-  FROM= [[["Long Beach"], ["Los Angeles"], ["New York"], ["New Jersey"], ["Houston"], ["Oakland"], ["Tacoma"], ["Philadelphia"], ["Detroit"], ["Puerto Rico‎"], ["Hawaii"] ]]
-  TO= [[["Long Beach"], ["Los Angeles"], ["New York"], ["New Jersey"], ["Houston"], ["Oakland"], ["Tacoma"], ["Philadelphia"], ["Detroit"], ["Puerto Rico‎"], ["Hawaii"] ]]
+  FROM= [ "Long Beach", "Los Angeles", "New York", "New Jersey", "Houston", "Oakland", "Tacoma", "Philadelphia", "Detroit", "Puerto Rico‎", "Hawaii" ]
+  TO= [ "Long Beach", "Los Angeles", "New York", "New Jersey", "Houston", "Oakland", "Tacoma", "Philadelphia", "Detroit", "Puerto Rico‎", "Hawaii" ]
 end
 
 
