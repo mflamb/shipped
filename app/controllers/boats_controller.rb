@@ -4,15 +4,27 @@ class BoatsController < ApplicationController
   end
 
   def new
-    @boat = Boat.create
+    @boat = Boat.new
   end
 
   def create
     @boat = Boat.new(boat_params)
-    @boat.save
+    @boat.user_id = current_user.id
+    if @boat.save
+      redirect_to boats_path
+    else 
+      puts @boat.errors.full_messages
+      redirect_to "new"
+    end
   end
 
   def show
+  end
+
+  def destroy
+   @boat = Boat.find(params[:id])
+   @boat.destroy
+   redirect_to boats_path
   end
 
   private
