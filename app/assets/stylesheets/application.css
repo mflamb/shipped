@@ -16,6 +16,8 @@
 .ship{
   height: 58px;
   width: 55px;
+  float: left;
+  margin-left: 25px;
 }
 
 html{
@@ -37,6 +39,7 @@ html{
      padding: 14px 16px;
      text-decoration: none;
      font-size: 17px;
+     margin-top: 5px;
  }
 
  /* Change the color of links on hover */
