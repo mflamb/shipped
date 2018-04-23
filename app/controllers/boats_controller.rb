@@ -9,6 +9,7 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
+    @boat.user_id = current_user.id
     @boat.save
   end
 
