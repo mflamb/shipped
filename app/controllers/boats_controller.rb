@@ -16,6 +16,7 @@ class BoatsController < ApplicationController
       puts @boat.errors.full_messages
       redirect_to "new"
     end
+
   end
 
   def show
