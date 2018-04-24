@@ -11,7 +11,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     if @job.save
       redirect_to jobs_path
-    else 
+    else
       puts @job.errors.full_messages
       redirect_to "new"
     end

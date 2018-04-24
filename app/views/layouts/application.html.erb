@@ -10,28 +10,27 @@
   </head>
   <body>
 
-  <!-- <div>
-  <ul>
-  <% if user_signed_in? %>
-    <li> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
-    <li> <%= link_to 'Create A New Boat', new_boat_path %> </li>
-    <li> <%= link_to 'Create A New Job', new_job_path %> </li>
-    <li> <%= link_to 'View All Boats', boats_path %> </li>
-    <li> <%= link_to 'View All Jobs', jobs_path %> </li>
-    <% else %>
-    <li> <%= link_to 'Sign In', new_user_session_path %> </li>
-    <% end %>
-  </div> -->
-    <!-- <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> -->
-
     <div class="topnav">
         <a> <%= link_to 'View All Schedules', schedules_path %> </a>
       <% if user_signed_in? %>
-        <a> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </a>
-        <a> <%= link_to 'Create a New Schedue', new_schedule_path %> </a>
-        <a><%= link_to 'Create A New Boat', new_boat_path %> </a>
-        <a><%= link_to 'Create A New Job', new_job_path %> </a>
+
+        <a> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></a>
+        <div class="dropdown">
+          <button class="dropbtn">Boats</button>
+            <div class="dropdown-content">
+                <a><%= link_to 'Create New Boat', new_boat_path, class: 'test' %></a>
+                <a><%= link_to 'View All Boats', boats_path %></a>
+              </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Jobs</button>
+              <div class="dropdown-content">
+                  <a><%= link_to 'Create A Job', new_job_path %></a>
+                  <a><%= link_to 'View All Jobs', jobs_path %></a>
+                </div>
+            </div>
+        <a> <%= link_to 'Create New Schedule', new_schedule_path%></a>
+
         <%=image_tag("containers.png", alt: "ship", class: 'ship')%>
         <% else %>
          <%=image_tag("containers.png", alt: "ship", class: 'ship')%>
