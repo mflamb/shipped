@@ -26,9 +26,11 @@
     <p class="alert"><%= alert %></p> -->
 
     <div class="topnav">
+        <a> <%= link_to 'View All Schedules', schedules_path %> </a>
       <% if user_signed_in? %>
-        <a> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></a>
-        <a><%= link_to 'Create A New Boat', new_boat_path %></a>
+        <a> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </a>
+        <a> <%= link_to 'Create a New Schedue', new_schedule_path %> </a>
+        <a><%= link_to 'Create A New Boat', new_boat_path %> </a>
         <a><%= link_to 'Create A New Job', new_job_path %> </a>
         <%=image_tag("containers.png", alt: "ship", class: 'ship')%>
         <% else %>

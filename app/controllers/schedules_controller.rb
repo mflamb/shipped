@@ -1,5 +1,8 @@
 class SchedulesController < ApplicationController
 
+  def index 
+    @schedules = Schedule.all
+  end
 
   def new
     @schedule = Schedule.new
@@ -12,9 +15,11 @@ class SchedulesController < ApplicationController
   end
 end
 
+
   private
 
   def schedule_params
     params.require(:schedule).permit(:job_id, :boat_id)
   end
 end
+
