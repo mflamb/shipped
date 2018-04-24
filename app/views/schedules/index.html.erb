@@ -1,0 +1,16 @@
+<h1>Schedules#index</h1>
+<p>Find me in app/views/schedules/index.html.erb</p>
+
+<div>
+<% @schedules.reverse.each do |schedule| %>
+    <% job = Job.find(schedule.job_id) %>
+    <% boat = Boat.find(schedule.boat_id) %>
+    <h3> <%= schedule.id %>. Date of Assignment: <%= schedule.created_at %> </h3>
+    <p> <b>Boat Name: </b> <%= boat.name %> </p>
+    <p> <b>Home Port: </b> <%= boat.location %> </p>
+    <p> <b>Job Name: </b> <%= job.name %> </p>
+    <p> <b>Job Description: </b> <%= job.description %> </p>
+    <p> <b>Job Origin: </b> <%= job.origin %> </p>
+    <p> <b>Job Destination: </b> <%= job.destination %> </p>
+</div>
+<% end %>

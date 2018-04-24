@@ -11,7 +11,9 @@
   <body>
 
     <div class="topnav">
+        <a> <%= link_to 'View All Schedules', schedules_path %> </a>
       <% if user_signed_in? %>
+
         <a> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></a>
         <div class="dropdown">
           <button class="dropbtn">Boats</button>
@@ -28,6 +30,7 @@
                 </div>
             </div>
         <a> <%= link_to 'Create New Schedule', new_schedule_path%></a>
+
         <%=image_tag("containers.png", alt: "ship", class: 'ship')%>
         <% else %>
          <%=image_tag("containers.png", alt: "ship", class: 'ship')%>
