@@ -9,8 +9,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-<<<<<<< HEAD
-  <div>
+
+  <!-- <div>
   <ul>
   <% if user_signed_in? %>
     <li> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
@@ -21,16 +21,22 @@
     <% else %>
     <li> <%= link_to 'Sign In', new_user_session_path %> </li>
     <% end %>
-  </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-=======
+  </div> -->
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
+
     <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#boats">Boats</a>
-        <a href="#jobs">Jobs</a>
-        <a href="#profile">Profile</a>
+      <% if user_signed_in? %>
+        <a> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></a>
+        <a><%= link_to 'Create A New Boat', new_boat_path %></a>
+        <a><%= link_to 'Create A New Job', new_job_path %> </a>
+        <%=image_tag("containers.png", alt: "ship", class: 'ship')%>
+        <% else %>
          <%=image_tag("containers.png", alt: "ship", class: 'ship')%>
+        <a><%= link_to 'Sign In', new_user_session_path %></a>
+        <a><%= link_to 'View All Boats', boats_path %></a>
+        <a><%= link_to 'View All Jobs', jobs_path %> </a>
+         <% end %>
       </div>
       <div class="logo">
           <strong id="logo">Shipping Worldwide </strong> <br>
@@ -40,7 +46,6 @@
 
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
->>>>>>> renamed a table, added navbar with some style
     <%= yield %>
   </body>
 </html>
