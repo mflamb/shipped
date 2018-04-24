@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   def index
+    @jobs = Job.all
   end
 
   def new
@@ -8,7 +9,6 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
-
     if @job.save
       redirect_to jobs_path
     else 
