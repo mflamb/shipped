@@ -1,0 +1,5 @@
+var schedules = document.getElementById('#schedules');
+
+$("<%= j render @schedule %>").prependTo("#schedules");
+
+// ^@schedule is not a variable proper, it just calls the partial you have with html to put the new info in for page display

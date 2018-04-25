@@ -2,16 +2,22 @@ class SchedulesController < ApplicationController
 
   def index 
     @schedules = Schedule.all
-  end
-
-  def new
     @schedule = Schedule.new
   end
 
+  # def new
+  #   @schedule = Schedule.new
+  # end
+
   def create
     @schedule = Schedule.new(schedule_params)
-  if  @schedule.save
-    redirect_to root_path
+    @job = Job.find(@schedule.job_id)
+    @boat = Boat.find(@schedule.boat_id)
+    if @schedule.save
+      respond_to do |format|    
+        format.js
+      # redirect_to schedules_path
+    end
   end
 end
 

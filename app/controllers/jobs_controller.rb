@@ -18,9 +18,6 @@ class JobsController < ApplicationController
 
   end
 
-  def update
-  end
-
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
