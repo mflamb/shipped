@@ -1,25 +1,31 @@
-<h1>Create a New Job</h1>
+<!-- <h1>Create a New Job</h1> -->
 
-    <%= simple_form_for(@job) do |f| %>
-    <%= f.label :name %>
-        <br>
-    <%= f.input_field :name%>
-        <br>
-    <%= f.label :price %>
-        <br>
-    <%= f.input_field :price%>
-        <br>
-    <%= f.label :description %>
-        <br>
-    <%= f.input_field :description%>
-        <br>
-    <%= f.label :containers %>
-        <br>
-    <%= f.input_field :containers%>
-        <br>
-    <%= f.input :origin, collection: Job::FROM %>
-        <br>
-    <%= f.input :destination, collection: Job::TO %>
-        <br>
-    <%= f.submit  'Submit'%>
-    <% end %>
+
+<div class="section">
+  <div class="jobForm">
+    <h1>Create a New Job</h1>
+      <%= simple_form_for(@job) do |f| %>
+      <%= f.label :name %>
+          <br>
+          <%= f.input_field :name%>
+          <br>
+          <%= f.label :price %>
+          <br>
+          <%= f.input_field :price%>
+          <br>
+          <%= f.label :description %>
+          <br>
+          <%= f.input_field :description%>
+          <br>
+          <%= f.label :containers %>
+          <br>
+          <%= f.input_field :containers%>
+          <br>
+          <%= f.input :origin, collection: Job::FROM %>
+          <br>
+          <%= f.input :destination, collection: Job::TO %>
+          <br>
+          <%= f.submit  'Submit'%>
+          <% end %>
+      </div>
+</div>

@@ -13,6 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+ .notice{
+
+
+ }
+
+ .alert{
+
+
+ }
+
 .ship{
   height: 58px;
   width: 55px;
@@ -20,12 +31,18 @@
   margin-left: 25px;
 }
 
-html{
-  background-color: #bbc9a5;
+// html{
+//    background-image: #f0f0f0;
+//     color: #555;
+// }
+
+body{
+  background-image: url("horizon.jpg");
+  background-size: cover;
 }
  /* Add a background color to the top navigation */
  .topnav {
-     background-color: #7bc2e0;
+     background-color: #ffd480;
      opacity: 0.8;
  }
 
@@ -74,7 +91,7 @@ strong#logo{
  }
 
  .dropbtn {
-    background-color: #7bc2e0;
+    background-color: #ffd480;
     color: white;
     padding: 16px;
     font-size: 16px;

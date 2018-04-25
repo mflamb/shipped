@@ -3,9 +3,16 @@
 
 <h1>Create a New Boat</h1>
 
+
 <%= simple_form_for(@boat) do |f| %>
-<%= f.input :name %>
-<%= f.input :capacity %>
+<%=f.label :name%>
+<br>
+<%= f.input_field :name %>
+<br>
+<%=f.label :capacity%>
+<br>
+<%= f.input_field :capacity %>
+<br>
 <%= f.input :location, collection: Boat::PORTS %>
 <%= f.input :avatar, as: :file %>
 <%= f.submit %>
