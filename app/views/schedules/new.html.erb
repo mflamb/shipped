@@ -1,9 +1,9 @@
 <h1>Schedules#new</h1>
 
-<div class="schedule">
-  <%= form_for @schedule, url: schedules_path do |f| %>
-  <%= select("schedule", "boat_id", boatsMethod)%>
-  <%= select("schedule", "job_id", jobsMethod)%>
-  <%= f.submit %>
-  <% end %>
-</div>
+
+<%= form_for @schedule, url: schedules_path do |f| %>
+<%= select("schedule", "boat_id", boatsMethod)%>
+<%= select("schedule", "job_id", jobsMethod)%>
+<%= f.submit "Submit", data: { disable_with:"Submitting..." } %>
+<% end %>
+

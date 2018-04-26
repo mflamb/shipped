@@ -1,6 +1,20 @@
+
+<h1>Schedule a Boat for a Job</h1>
+
+<div id="create-schedule">
+<% if user_signed_in? %>
+<%= form_with scope: @schedule, url: schedules_path do |f| %>
+<%= select("schedule", "boat_id", boatsMethod)%>
+<%= select("schedule", "job_id", jobsMethod)%>
+<%= f.submit "Submit", data: { disable_with:"Submitting..." } %>
+<% end %>
+<% end %>
+</div>
+
 <h1>When Our Ships Will be Out</h1>
 
-<div class="schedule">
+<div id="schedules">
+
 <% @schedules.reverse.each do |schedule| %>
     <% job = Job.find(schedule.job_id) %>
     <% boat = Boat.find(schedule.boat_id) %>
