@@ -1,10 +1,33 @@
 
 <h1>Create a New Boat</h1>
 
-<%= simple_form_for(@boat) do |f| %>
-<%= f.input :name %>
-<%= f.input :capacity %>
-<%= f.input :location, collection: Boat::PORTS %>
-<%= f.input :avatar, as: :file %>
-<%= f.submit %>
-<% end %>
+<%=image_tag("ship.gif", alt: "ship", class: 'boat')%>
+
+<div class="createBoat">
+
+    <%= simple_form_for(@boat) do |f| %>
+    <%=f.label :name%>
+    <br><br>
+    <%= f.input_field :name %>
+    <br>
+    <br>
+    <%=f.label :capacity%>
+    <br><br>
+    <%= f.input_field :capacity %>
+    <br>
+    <br>
+    <%=f.label :location, 'Origin Location'%>
+    <br>
+    <br>
+    <%= f.input_field :location, collection: Boat::PORTS %>
+    <br>
+    <br>
+    <%=f.label :avatar%>
+    <br>
+    <br>
+    <%= f.input_field :avatar, as: :file %>
+    <br>
+    <br>
+    <%= f.submit %>
+    <% end %>
+  </div>
