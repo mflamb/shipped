@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SHIPPED PROJECT
 
-Things you may want to cover:
+This project was created with people who need access to jobs related to seafaring. Users can log onto the website create a profile for their boat and apply for jobs. Users will then be able to view all jobs within the schedules page which will show their boat. For people creating jobs they could view all jobs via the front page.
 
-* Ruby version
+BUILD STATUS 
 
-* System dependencies
+Currently working well, no issues at hand. 
 
-* Configuration
+TECH/FRAMEWORKS 
 
-* Database creation
+* Ruby on Rails
+* UJS 
+* Turbolinks 
+* jQuery
 
-* Database initialization
+INSTALLATION
 
-* How to run the test suite
+Download file, enter file from terminal, and then run rails s.
 
-* Services (job queues, cache servers, search engines, etc.)
+CREDITS 
 
-* Deployment instructions
+Mike Lamb, Johnathan Davilla, and Briana Table - Pinckney
 
-* ...
+
+
