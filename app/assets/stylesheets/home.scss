@@ -4,5 +4,22 @@
 
 .home{
   margin-top: 35px;
-  border-top-style: groove;
+    margin-left: 140px;
+    margin-right: 140px;
+    border-style: groove;
+    border-radius: 120%;
+    padding: 50px;
+    z-index: 0;
+    background-color: #f2f2f2;
+    opacity: 0.8;
+}
+
+.gulls{
+    width: 500px;
+    float: left;
+    border-radius: 40px;
+    margin-bottom: 35px;
+    margin-left: 20px;
+    position: fixed;
+    z-index: -1;
 }
