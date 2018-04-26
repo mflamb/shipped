@@ -1,5 +1,7 @@
 <h1>What's Going On</h1>
 
+<div class="feed">
+
 
 <% @jobs.reverse.each do |job| %>
     <h3> <%= job.id %>. <%= job.name %> <%= link_to 'Delete', job, :method => :delete, data: {confirm: "This is your last chance to change your mind!"} %> </h3>
@@ -11,3 +13,4 @@
     <p> <b>Containers Needed: </b><%= job.containers %> </p>
     </div>
 <% end %>
+</div>

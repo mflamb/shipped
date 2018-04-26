@@ -15,14 +15,15 @@
  */
 
  .notice{
-
-
+   text-align: center;
+   font-weight: bold;
+  font-family: 'Gamja Flower', cursive;
+  font-size: 30px;
  }
 
- .alert{
-
-
- }
+.devise{
+  text-align: center;
+}
 
 .ship{
   height: 58px;
@@ -30,11 +31,6 @@
   float: left;
   margin-left: 25px;
 }
-
-// html{
-//    background-image: #f0f0f0;
-//     color: #555;
-// }
 
 body{
   background-image: url("horizon.jpg");
@@ -44,6 +40,7 @@ body{
  .topnav {
      background-color: #ffd480;
      opacity: 0.8;
+     min-height: 50px;
  }
 
  /* Style the links inside the navigation bar */
