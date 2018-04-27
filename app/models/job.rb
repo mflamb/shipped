@@ -1,5 +1,5 @@
 class Job < ApplicationRecord
-  has_many :schedules
+  has_many :schedules, dependent: :destroy
   has_many :boats, through: :schedules
 
   validates :name, length: {minimum: 4}, uniqueness: true
