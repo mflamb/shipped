@@ -1,5 +1,7 @@
 class SchedulesController < ApplicationController
 
+  # Multiple variables for schedules index bc we have display of all schedules and form to create new ones on the same page
+  
   def index
     @schedules = Schedule.all
     @schedule = Schedule.new
@@ -8,6 +10,8 @@ class SchedulesController < ApplicationController
   #def new
   #@schedule = Schedule.new
   #end
+  
+  # Enable user to pass params into DB to create new schedule.  Also set instance variables for displaying information about jobs/boats associated with this schedule
 
   def create
     @schedule = Schedule.new(schedule_params)
@@ -21,6 +25,7 @@ class SchedulesController < ApplicationController
   end
 end
 
+  # Make params available to be added in DB during schedule creation
 
   private
 
