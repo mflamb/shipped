@@ -2,6 +2,9 @@
 <h1>Schedule a Boat for a Job</h1>
 
 <div id="create-schedule">
+    
+<!-- Show the create schedule form only if a user is signed in -->
+
 <% if user_signed_in? %>
 <%= form_with scope: @schedule, url: schedules_path do |f| %>
 <%= select("schedule", "boat_id", boatsMethod)%>
@@ -14,6 +17,8 @@
 <h1>When Our Ships Will be Out</h1>
 
 <div id="schedules">
+    
+<!-- List all schedules -->    
 
 <% @schedules.reverse.each do |schedule| %>
     <% job = Job.find(schedule.job_id) %>
