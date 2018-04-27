@@ -1,3 +1,5 @@
+# Define Job relationships with other models; required validations
+
 class Job < ApplicationRecord
   has_many :schedules, dependent: :destroy
   has_many :boats, through: :schedules
