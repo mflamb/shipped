@@ -1,4 +1,7 @@
 class BoatsController < ApplicationController
+  
+  # List of all boats
+  
   def index
     @boats = Boat.all
   end
@@ -7,6 +10,8 @@ class BoatsController < ApplicationController
     @boat = Boat.new
   end
 
+  # Pass in params to create new boat in DB
+  
   def create
     @boat = Boat.new(boat_params)
     @boat.user_id = current_user.id
@@ -21,12 +26,16 @@ class BoatsController < ApplicationController
 
   def show
   end
+  
+  # Grab the boat by ID and delete from DB
 
   def destroy
    @boat = Boat.find(params[:id])
    @boat.destroy
    redirect_to boats_path
   end
+  
+  # Make params available to be entered in DB during boat creation
 
   private
 
