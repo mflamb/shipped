@@ -10,6 +10,9 @@
   </head>
   <body>
     <div class="topnav">
+      
+      <!-- Display the links below only when a user is signed in -->
+      
       <% if user_signed_in? %>
 
         <a> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></a>
@@ -37,6 +40,9 @@
 
         <%=image_tag("containers.png", alt: "ship", class: 'ship')%>
         <% else %>
+      
+      <!-- Show these links when a user is not signed in -->
+
          <%=image_tag("containers.png", alt: "ship", class: 'ship')%>
         <a><%= link_to 'Sign In', new_user_session_path %></a>
         <a><%= link_to 'View All Boats', boats_path %></a>
