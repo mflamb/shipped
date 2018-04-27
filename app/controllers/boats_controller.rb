@@ -12,7 +12,7 @@ class BoatsController < ApplicationController
     @boat.user_id = current_user.id
     if @boat.save
       redirect_to boats_path
-    else 
+    else
       puts @boat.errors.full_messages
       redirect_to "new"
     end
