@@ -9,6 +9,7 @@ class Boat < ApplicationRecord
 
   validates :name, length: {minimum: 4}, uniqueness: true
   validates :capacity, numericality: { greater_than_or_equal_to: 1,  only_integer: true}
+  validates :location, presence: true
 
   PORTS= [ "Long Beach", "Los Angeles", "New York", "New Jersey", "Houston", "Oakland", "Tacoma", "Philadelphia", "Detroit", "Puerto Rico‎", "Hawaii" ]
 end
