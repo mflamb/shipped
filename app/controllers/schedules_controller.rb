@@ -20,10 +20,11 @@ class SchedulesController < ApplicationController
     if @schedule.save
       respond_to do |format|
         format.js
-      # redirect_to schedules_path
+      end
+    else
+      redirect_to schedules_path, :notice => "That schedule has already been created"
     end
   end
-end
 
   # Make params available to be added in DB during schedule creation
 

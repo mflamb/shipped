@@ -18,8 +18,7 @@ class BoatsController < ApplicationController
     if @boat.save
       redirect_to boats_path
     else
-      puts @boat.errors.full_messages
-      redirect_to "new"
+      redirect_to new_boat_path, :notice => "Please ensure that your boat name is unique (boat names are case sensitive) and that your boat's max capacity is at least 1"
     end
 
   end
